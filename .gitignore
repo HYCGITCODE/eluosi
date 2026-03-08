@@ -1,0 +1,37 @@
+# OpenClaw workspace files (not part of the project)
+.openclaw/
+.clawdhub/
+.clawhub/
+skills/
+agents-team/
+AGENTS.md
+SOUL.md
+USER.md
+TOOLS.md
+IDENTITY.md
+MEMORY.md
+HEARTBEAT.md
+BOOTSTRAP.md
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Build output
+dist/
+build/
