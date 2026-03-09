@@ -8,7 +8,7 @@ const BASE_URL = '/api'
 /**
  * Fetch news list from API
  * @param {Object} options - Request options
- * @param {number} options.page - Page number
+ * @param {number} options.page - Page number (not used in MVP, all news returned)
  * @param {string} options.source - Filter by source
  * @returns {Promise<{news: Array, hasMore: boolean}>}
  */
@@ -17,7 +17,11 @@ export async function fetchNews({ page = 1, source } = {}) {
   if (page) params.append('page', page)
   if (source) params.append('source', source)
   
-  const response = await fetch(`${BASE_URL}/news?${params.toString()}`, {
+  const url = source && source !== 'all' 
+    ? `${BASE_URL}/news/${source}`
+    : `${BASE_URL}/news?${params.toString()}`
+  
+  const response = await fetch(url, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -28,7 +32,21 @@ export async function fetchNews({ page = 1, source } = {}) {
     throw new Error(`HTTP error! status: ${response.status}`)
   }
   
-  return response.json()
+  const data = await response.json()
+  
+  // Adapt backend response format {success, count, data} to frontend format {news, hasMore}
+  // Also map backend field names (link, description) to frontend (url, summary)
+  const rawNews = data.data || data.news || data.items || []
+  const mappedNews = rawNews.map(item => ({
+    ...item,
+    url: item.url || item.link,
+    summary: item.summary || item.description
+  }))
+  
+  return {
+    news: mappedNews,
+    hasMore: false // MVP: all news returned at once, no pagination
+  }
 }
 
 /**
