@@ -2,7 +2,7 @@
 
 **项目**: AI 行业新闻聚合应用  
 **版本**: 1.0.0  
-**最后更新**: 2026-03-09
+**最后更新**: 2026-03-11
 
 ---
 
@@ -10,7 +10,12 @@
 
 1. [系统要求](#系统要求)
 2. [快速部署](#快速部署)
+   - [方案 A: Render 一键部署](#方案-a-render-一键部署强烈推荐)
+   - [方案 B: 手动部署](#方案-b-手动部署)
 3. [生产环境部署](#生产环境部署)
+   - [方案 D: Railway 部署](#方案-d-railway-部署)
+   - [方案 E: Docker 部署](#方案-e-docker-部署)
+   - [方案 F: VPS 手动部署](#方案-f-vps-手动部署)
 4. [环境变量配置](#环境变量配置)
 5. [常见问题](#常见问题)
 
@@ -39,7 +44,28 @@
 
 ## 快速部署
 
-### 步骤 1: 克隆仓库
+### 方案 A: Render 一键部署（⭐ 强烈推荐）
+
+**优势**: 免费额度、HTTPS、自动部署、新加坡节点、配置简单
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/HYCGITCODE/ai-news-pulse)
+
+**部署步骤**:
+1. 点击上述 "Deploy to Render" 按钮
+2. 登录 Render（可使用 GitHub 账号）
+3. 确认服务配置（已预配置 `render.yaml`）
+4. 点击 **"Create Web Service"**
+5. 等待 2-5 分钟部署完成
+
+**详细教程**: 查看 [docs/DEPLOY_RENDER.md](docs/DEPLOY_RENDER.md)
+
+**预计耗时**: 10 分钟
+
+---
+
+### 方案 B: 手动部署
+
+#### 步骤 1: 克隆仓库
 
 ```bash
 git clone https://github.com/HYCGITCODE/ai-news-pulse.git
@@ -112,7 +138,7 @@ npm run dev
 
 ## 生产环境部署
 
-### 方案 A: Railway 部署（推荐）
+### 方案 D: Railway 部署
 
 **优势**: 自动部署、免费额度、HTTPS、自动扩缩容
 
@@ -129,7 +155,7 @@ NODE_ENV=production
 
 ---
 
-### 方案 B: Docker 部署
+### 方案 E: Docker 部署
 
 **创建 Dockerfile**（项目根目录）:
 
@@ -167,7 +193,7 @@ docker run -p 80:80 ai-news-pulse
 
 ---
 
-### 方案 C: VPS 手动部署
+### 方案 F: VPS 手动部署
 
 **适用**: 自有服务器、云服务器
 
@@ -469,6 +495,7 @@ npm update
 
 | 版本 | 日期 | 变更 |
 |------|------|------|
+| 1.1.0 | 2026-03-11 | 新增 Render 一键部署方案、render.yaml 配置文件 |
 | 1.0.0 | 2026-03-09 | 初始发布 |
 
 ---

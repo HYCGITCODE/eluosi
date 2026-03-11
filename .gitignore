@@ -3,7 +3,10 @@
 .clawdhub/
 .clawhub/
 skills/
-agents-team/
+agents-team
+node_modules
+dist
+.env/
 AGENTS.md
 SOUL.md
 USER.md
