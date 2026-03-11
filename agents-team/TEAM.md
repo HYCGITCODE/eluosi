@@ -174,6 +174,35 @@ PM (胡小产) ──── 团队指挥官，对 OCA 负责
 | **文档自动化** | 使用 Swagger/OpenAPI，代码变更自动更新文档 |
 | **变更同步** | 接口变更必须在同步群@所有人，并附变更说明 |
 
+### 5.3 技术选型偏好 🔴 新增
+
+**核心原则：优先使用 Java 技术栈**
+
+| 层级 | 首选技术 | 备选技术 | 说明 |
+|------|----------|----------|------|
+| **后端语言** | 🟢 Java (17+) | Node.js, Python | 优先使用 Spring Boot |
+| **前端框架** | 🟢 Vue 3 / React | Angular | 根据团队熟悉度选择 |
+| **数据库** | 🟢 MySQL / PostgreSQL | MongoDB | 关系型数据库优先 |
+| **缓存** | 🟢 Redis | - | 标准配置 |
+| **消息队列** | 🟢 Kafka / RocketMQ | RabbitMQ | Java 生态优先 |
+| **部署平台** | 🟢 Docker + K8s | Render, Railway | 容器化优先 |
+| **CI/CD** | 🟢 Jenkins / GitLab CI | GitHub Actions | Java 项目经验证 |
+| **监控** | 🟢 Prometheus + Grafana | - | 标准配置 |
+| **日志** | 🟢 ELK Stack | - | Java 集成成熟 |
+
+**Java 技术栈优势**:
+- ✅ 类型安全，减少运行时错误
+- ✅ 生态成熟，企业级支持
+- ✅ 性能优秀，适合高并发场景
+- ✅ 团队熟悉度高，维护成本低
+- ✅ 招聘容易，人才储备充足
+
+**例外情况**（可使用非 Java 技术）:
+- 快速原型验证（可用 Node.js/Python）
+- 前端项目（JavaScript/TypeScript）
+- 数据科学/机器学习（Python）
+- 特殊场景（如实时性要求极高的 C++）
+
 ---
 
 ## 6. 角色职责清单 (Role Responsibilities) 🔴 新增

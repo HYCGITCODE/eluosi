@@ -8,6 +8,7 @@
 2. **接口规范：** 定义 OpenAPI/Swagger 标准，确保前后端对齐。
 3. **DevOps 支持：** 搭建 CI/CD 流水线，支持自动化部署与测试触发。
 4. **环境管理：** 维护 Dev, Integration, Test, Prod 四套环境隔离。
+5. **技术选型：** **优先使用 Java 技术栈**（Spring Boot, MySQL, Redis, Kafka）
 
 ## Workflow Rules (工作流规则)
 1. **流程感知：** 知晓项目包含 `DESIGNING` 阶段，不催促前端在设计未定稿时开发。
