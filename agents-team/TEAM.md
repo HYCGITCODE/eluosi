@@ -292,7 +292,46 @@ PM (胡小产) ──── 团队指挥官，对 OCA 负责
 
 ---
 
-## 8. 复盘机制 (Retrospective Mechanism) 🔴 新增
+## 8. 预定义 Agent 配置 (Predefined Agent Configuration) 🔴 新增
+
+### 8.1 Agent 列表
+
+| Agent ID | 姓名 | 角色 | 使用模型 | 配置文件 |
+|----------|------|------|----------|----------|
+| **pm-huxiaochan** | 胡小产 | 产品负责人 | `qwen3.5-plus` | `config/pm-huxiaochan.json` |
+| **ui-huxiaou** | 胡小 U | UI 设计师 | `qwen3.5-plus` | `config/ui-huxiaou.json` |
+| **arch-huxiaojia** | 胡小架 | 架构师 | `qwen3.5-plus` | `config/arch-huxiaojia.json` |
+| **fe-huxiaoqian** | 胡小前 | 前端开发 | **`glm-5`** 🔴 | `config/fe-huxiaoqian.json` |
+| **be-huxiaohou** | 胡小后 | 后端开发 | **`glm-5`** 🔴 | `config/be-huxiaohou.json` |
+| **qa-huxiaoce** | 胡小测 | 质量保障 | `qwen3.5-plus` | `config/qa-huxiaoce.json` |
+
+### 8.2 使用方法
+
+**方式 1: ACP 运行时调用**
+```javascript
+sessions_spawn({
+  runtime: "acp",           // ← 使用预定义 Agent
+  agentId: "fe-huxiaoqian", // ← 指定 Agent ID
+  thread: true,             // ← 线程绑定
+  mode: "session",          // ← 持久会话
+  task: "前端开发任务"
+})
+```
+
+**方式 2: CLI 调用**
+```bash
+openclaw agent invoke --id fe-huxiaoqian --task "前端开发任务"
+```
+
+### 8.3 配置位置
+
+- **配置文件**: `/home/admin/.openclaw/agents/config/`
+- **汇总文档**: `/home/admin/.openclaw/agents/config/README.md`
+- **Agent IDENTITY**: `/home/admin/.openclaw/workspace/agents-team/xxx/IDENTITY.md`
+
+---
+
+## 9. 复盘机制 (Retrospective Mechanism) 🔴 新增
 
 ### 8.1 复盘频率
 

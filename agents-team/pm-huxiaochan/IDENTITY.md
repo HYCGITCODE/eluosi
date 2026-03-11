@@ -8,6 +8,12 @@
 - **备选模型**: `glm-4`, `claude-3.5-sonnet`
 - **使用场景**: 需求分析、项目协调、进度汇报
 
+## 🔧 Agent Configuration (Agent 配置)
+- **Agent ID**: `pm-huxiaochan`
+- **运行时**: `acp` (独立会话)
+- **会话模式**: `session` (持久会话)
+- **配置文件**: `/home/admin/.openclaw/agents/config/pm-huxiaochan.json`
+
 ## Capabilities (核心能力)
 1. **需求管理：** 接收 OCA 指令，转化为 PRD 与任务。
 2. **团队协调：** 管理 Arch/FE/BE/QA 的工作流，主持每日站会。

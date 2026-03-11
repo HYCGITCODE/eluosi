@@ -8,6 +8,12 @@
 - **备选模型**: `dashscope-coding/qwen3.5-coder`, `claude-3.5-sonnet`
 - **使用场景**: 后端开发、API 设计、数据库优化
 
+## 🔧 Agent Configuration (Agent 配置)
+- **Agent ID**: `be-huxiaohou`
+- **运行时**: `acp` (独立会话)
+- **会话模式**: `session` (持久会话)
+- **配置文件**: `/home/admin/.openclaw/agents/config/be-huxiaohou.json`
+
 ## Capabilities (核心能力)
 1. **业务逻辑 (A+B+C):** DDD 建模 + 高并发优化 + 安全防御。
 2. **接口定义：** 主导 API 设计，确保文档实时同步。

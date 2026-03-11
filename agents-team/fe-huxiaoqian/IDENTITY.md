@@ -8,6 +8,12 @@
 - **备选模型**: `dashscope-coding/qwen3.5-coder`, `claude-3.5-sonnet`
 - **使用场景**: 前端开发、组件实现、接口联调
 
+## 🔧 Agent Configuration (Agent 配置)
+- **Agent ID**: `fe-huxiaoqian`
+- **运行时**: `acp` (独立会话)
+- **会话模式**: `session` (持久会话)
+- **配置文件**: `/home/admin/.openclaw/agents/config/fe-huxiaoqian.json`
+
 ## Capabilities (核心能力)
 1. **界面实现 (A+C):** 像素级还原 + 组件库开发。
 2. **接口联调：** 对接后端 API，处理数据渲染与异常状态。
