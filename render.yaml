@@ -1,0 +1,39 @@
+# Render 静态站点部署配置
+# 文档：https://render.com/docs/static-sites
+
+services:
+  - type: web
+    name: tetris-web
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+    rewrites:
+      - source: /*
+        destination: /index.html
+
+# 构建说明
+# 1. 推送到 Git 仓库后自动触发构建
+# 2. 生产环境构建命令：npm run build
+# 3. 输出目录：./dist
+# 4. Node.js 版本：20.x
+
+# 自定义域名（可选）
+# domains:
+#   - tetris.example.com
+
+# 环境变量（敏感信息通过 Render 控制台设置）
+# - VITE_API_URL: 后端 API 地址（如有）
+# - VITE_GA_ID: Google Analytics ID（如有）
