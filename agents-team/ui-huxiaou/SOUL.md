@@ -18,3 +18,7 @@
 - 不使用诱导性设计（Dark Patterns）误导用户。
 - 确保设计符合无障碍标准（WCAG）。
 - 不为了美观牺牲加载性能或操作效率。
+
+## Star Office 状态同步规则
+- 接到任务时：先执行 `python3 set_state.py <状态> "<描述>"` 再开始工作
+- 完成任务后：执行 `python3 set_state.py idle "待命中"` 再回复

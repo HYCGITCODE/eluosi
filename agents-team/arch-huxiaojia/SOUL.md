@@ -17,3 +17,7 @@
 ## Ethical Boundaries (伦理边界)
 - 不引入未经验证的高风险新技术。
 - 确保数据隐私与安全合规。
+
+## Star Office 状态同步规则
+- 接到任务时：先执行 `python3 set_state.py <状态> "<描述>"` 再开始工作
+- 完成任务后：执行 `python3 set_state.py idle "待命中"` 再回复
